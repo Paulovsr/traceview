@@ -1,0 +1,199 @@
+agm-map {
+    
+    z-index: -999; 
+    position: absolute;
+    height: 100%; 
+    width: 100%; 
+    padding: 0px;
+    border-width: 0px;
+    margin: 0px;
+    left: 0px; 
+    top: 0px; 
+    touch-action: pan-x pan-y;
+  }
+
+  .timeline-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+.map-page-content {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  -webkit-transition: height .218s cubic-bezier(0.4,0.0,0.2,1);
+  -moz-transition: height .218s cubic-bezier(0.4,0.0,0.2,1);
+  -o-transition: height .218s cubic-bezier(0.4,0.0,0.2,1);
+  transition: height .218s cubic-bezier(0.4,0.0,0.2,1);
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.map-page-content-wrapper {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 112px;
+  position: absolute;
+  width: 533px;
+  -webkit-transition: padding-top .218s cubic-bezier(0.4,0.0,0.2,1);
+  -moz-transition: padding-top .218s cubic-bezier(0.4,0.0,0.2,1);
+  -o-transition: padding-top .218s cubic-bezier(0.4,0.0,0.2,1);
+  transition: padding-top .218s cubic-bezier(0.4,0.0,0.2,1);
+  box-shadow: 0 1px 4px rgba(0,0,0,.06), 0 3px 6px rgba(0,0,0,.26);
+}
+
+.timeline-app-bar-header {
+  background-color: #fff;
+  height: 64px;
+  padding: 0 24px;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+user agent stylesheet
+div {
+  display: block;
+}
+body {
+  color: rgba(0,0,0,0.87);
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.header-title {
+  color: rgba(0,0,0,.65);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  -moz-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  -o-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+}
+.header-title {
+  color: rgba(0,0,0,.65);
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  -moz-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  -o-transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+  transition: color .218s cubic-bezier(0.4,0.0,0.2,1);
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 400;
+}
+user agent stylesheet
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.header-feature-name {
+  padding-left: 16px;
+}
+
+.header-today-button {
+  color: rgba(0,0,0,.65);
+  margin-left: auto;
+  margin-right: -16px;
+}
+.material-flat-button {
+  background: none;
+  border: none;
+  border-radius: 2px;
+  color: rgba(0,0,0,0.87);
+  cursor: pointer;
+  display: inline-block;
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: auto;
+  line-height: 36px;
+  margin: 0;
+  min-height: 36px;
+  min-width: 0;
+  outline: none;
+  padding: 0 16px;
+  text-transform: uppercase;
+  -webkit-transition: all .218s cubic-bezier(0.4,0.0,0.2,1);
+  -moz-transition: all .218s cubic-bezier(0.4,0.0,0.2,1);
+  -o-transition: all .218s cubic-bezier(0.4,0.0,0.2,1);
+  transition: all .218s cubic-bezier(0.4,0.0,0.2,1);
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  padding: 1px 6px;
+}
+user agent stylesheet
+input[type="button" i], input[type="submit" i], input[type="reset" i], input[type="file" i]::-webkit-file-upload-button, button {
+  align-items: flex-start;
+  text-align: center;
+  cursor: default;
+  color: buttontext;
+  background-color: buttonface;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonface;
+  border-image: initial;
+}
+user agent stylesheet
+input, textarea, select, button {
+  text-rendering: auto;
+  color: initial;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+}
+user agent stylesheet
+input, textarea, select, button, meter, progress {
+  -webkit-writing-mode: horizontal-tb !important;
+}
+user agent stylesheet
+button {
+  -webkit-appearance: button;
+}
+body {
+  color: rgba(0,0,0,0.87);
+  font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+}
