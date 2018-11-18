@@ -1,34 +1,37 @@
+import { CursosGuard } from './guards/cursos.guard';
+import { AlunosGuard } from './guards/alunos.guard';
+import { AuthGuard } from './guards/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { AgmCoreModule } from '@agm/core';
-import { MapComponent } from './maps/map/map.component';
-import { AgmDirectionModule } from 'agm-direction'
-import { ErrorsModule } from './errors/errors.module';
-import { CoreModule } from './core/core.module';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
 import { AppRoutingModule } from './app.routing.module';
-
+import { AuthService } from './login/auth.service';
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MapComponent
+    HomeComponent,
+    LoginComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
-    BrowserModule,    
-    HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDhshvFaKlwMcb4W-3loUsCldP1OQ6UA7k'
-    }),
-    AgmDirectionModule, 
-    BrowserModule,    
-    ErrorsModule,
-    CoreModule,
-    AppRoutingModule,
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard,
+    CursosGuard,
+    AlunosGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

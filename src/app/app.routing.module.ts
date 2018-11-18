@@ -1,73 +1,36 @@
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
+import { CursosGuard } from './guards/cursos.guard';
+import { AlunosGuard } from './guards/alunos.guard';
 import { NgModule } from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NotFoundComponent } from './errors/not-found/not-found.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
-import { AuthGuard } from './core/auth/auth.guard';
-
-import { GlobalErrorComponent } from './errors/global-error/global-error.component';
-import { MapComponent } from './maps/map/map.component';
-const routes: Routes = [
-    {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'home',
-    },
-    { 
-        path: 'home',
-        loadChildren: './home/home.module#HomeModule'
-    },              
-    { 
-        path: 'user/:userName', 
-        pathMatch: 'full',
-        component: MapComponent,
-        resolve: {
-            photos: MapComponent
-        },
-        data: {
-            title: 'Timeline'
-        }
-    },
-    { 
-        path: 'p/add', 
-        component: MapComponent,
+const appRoutes: Routes = [
+    { path: 'cursos',
+        loadChildren: './cursos/cursos.module#CursosModule',
         canActivate: [AuthGuard],
-        data: {
-            title: 'Photo upload'
-        }
+        canActivateChild: [CursosGuard],
+        canLoad: [AuthGuard]
     },
-    { 
-        path: 'p/:photoId', 
-        component: MapComponent,
-        data: {
-            title: 'Photo detail'
-        }
-    }, 
-    { 
-        path: 'error', 
-        component: GlobalErrorComponent,
-        data: {
-            title: 'Error'
-        }
-    },      
-    { 
-        path: 'not-found', 
-        component: NotFoundComponent,
-        data: {
-            title: 'Not found'
-        }
-    },       
-    { 
-        path: '**', 
-        redirectTo: 'not-found'
-    }  
+    { path: 'alunos',
+        loadChildren: './alunos/alunos.module#AlunosModule',
+        canActivate: [AuthGuard],
+        canLoad: [AuthGuard]
+    },
+    { path: 'login', component: LoginComponent },
+    { path: 'home', component: HomeComponent,
+        canActivate: [AuthGuard]
+    },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '**', component: PaginaNaoEncontradaComponent }
 ];
 
 @NgModule({
-    imports: [ 
-        RouterModule.forRoot(routes, { useHash: true } ) 
-    ],
-    exports: [ RouterModule ]
+    imports: [RouterModule.forRoot(appRoutes, {useHash: true})],
+    exports: [RouterModule]
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}
